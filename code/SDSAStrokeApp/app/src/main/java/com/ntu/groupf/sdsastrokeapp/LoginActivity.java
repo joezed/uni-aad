@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if (currentUser != null) {
             finish();
-            startActivity(new Intent(getApplicationContext(), IntroActivity.class));
+            startActivity(new Intent(getApplicationContext(), AppIntroActivity.class));
         }
 
         txt_email = (EditText) findViewById(R.id.txt_email);
@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             Toast.makeText(LoginActivity.this, "Authentication succeeded",
                                     Toast.LENGTH_SHORT).show();
                             finish();
-                            startActivity(new Intent(LoginActivity.this, IntroActivity.class));
+                            startActivity(new Intent(LoginActivity.this, AppIntroActivity.class));
                         } else {
                             Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();

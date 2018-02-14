@@ -6,4 +6,221 @@
     android:layout_height="match_parent"
     tools:context="com.ntu.groupf.sdsastrokeapp.RoadSignRecognitionActivity">
 
+    <ImageView
+        android:id="@+id/img_sign1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign1"
+        app:layout_constraintEnd_toStartOf="@+id/img_sign2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign2"
+        app:layout_constraintEnd_toStartOf="@+id/img_sign3"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign3"
+        app:layout_constraintEnd_toStartOf="@+id/img_sign4"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign5"
+        app:layout_constraintEnd_toStartOf="@+id/img_sign6"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign1"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign6"
+        app:layout_constraintEnd_toStartOf="@+id/img_sign7"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign2"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign7"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign7"
+        app:layout_constraintEnd_toStartOf="@+id/img_sign8"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign3"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign8"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign4"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign9"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign9"
+        app:layout_constraintEnd_toStartOf="@+id/img_sign10"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign5"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign10"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign10"
+        app:layout_constraintEnd_toStartOf="@+id/img_sign11"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign6"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign11"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign11"
+        app:layout_constraintEnd_toStartOf="@+id/img_sign12"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign7"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign12"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign8"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign13"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign13"
+        app:layout_constraintEnd_toStartOf="@+id/img_sign14"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign11"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_sign14"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign12"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/img_scene1"
+        android:layout_width="465dp"
+        android:layout_height="314dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/scene1"
+        android:layout_marginLeft="36dp" />
+
+    <ImageView
+        android:id="@+id/img_signBlank"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign_blank"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_scene1"
+        app:layout_constraintVertical_bias="0.074"
+        android:layout_marginLeft="220dp" />
+
+    <Button
+        android:id="@+id/btn_prev"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="40dp"
+        android:text="Prev"
+        app:layout_constraintEnd_toStartOf="@+id/img_signBlank"
+        app:layout_constraintTop_toBottomOf="@+id/img_scene1"
+        android:layout_marginRight="50dp" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:text="Next"
+        app:layout_constraintStart_toEndOf="@+id/img_signBlank"
+        app:layout_constraintTop_toBottomOf="@+id/img_scene1"
+        android:layout_marginLeft="50dp" />
+
+
 </android.support.constraint.ConstraintLayout>
