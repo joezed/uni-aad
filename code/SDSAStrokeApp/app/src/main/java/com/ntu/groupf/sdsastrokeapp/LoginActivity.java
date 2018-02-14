@@ -46,9 +46,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(new Intent(getApplicationContext(), IntroActivity.class));
         }
 
-        EditText txt_email = (EditText) findViewById(R.id.txt_email);
-        EditText txt_password = (EditText) findViewById(R.id.txt_password);
-        Button btn_login = (Button) findViewById(R.id.btn_login);
+        txt_email = (EditText) findViewById(R.id.txt_email);
+        txt_password = (EditText) findViewById(R.id.txt_password);
+        btn_login = (Button) findViewById(R.id.btn_login);
 
         ProgressDialog progressDialog = new ProgressDialog(this);
 
