@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CopyToImageDialog">
+		<item value="png" key="CopyToImageDialog.imageFormat"/>
+		<item value="E:\Year 3\Advanced Analysis and Design\SequenceDiagram\AAD" key="CopyToImageDialog.folder"/>
+		<item value="false" key="CopyToImageDialog.exportToHTML"/>
+		<item value="false" key="CopyToImageDialog.overwriteExisting"/>
+	</section>
+</section>
