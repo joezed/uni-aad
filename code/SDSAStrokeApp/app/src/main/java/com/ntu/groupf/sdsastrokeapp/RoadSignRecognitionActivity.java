@@ -47,7 +47,7 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
         setContentView(R.layout.activity_road_sign_recognition);
 
         //fill map with null answers
-        for (int i = 1; i <= 12; i++) {
+        for (int i = 1; i <= NUMBER_OF_SCENES; i++) {
             answers.put(i, 0);
         }
 
