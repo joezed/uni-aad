@@ -2,8 +2,8 @@
 <section name="Workbench">
 	<section name="CopyToImageDialog">
 		<item value="png" key="CopyToImageDialog.imageFormat"/>
-		<item value="E:\Year 3\Advanced Analysis and Design\SequenceDiagram\AAD" key="CopyToImageDialog.folder"/>
-		<item value="false" key="CopyToImageDialog.exportToHTML"/>
+		<item value="C:\Users\n0623403\Desktop\uni-aad\doc\uml\SequenceDiagram" key="CopyToImageDialog.folder"/>
 		<item value="false" key="CopyToImageDialog.overwriteExisting"/>
+		<item value="false" key="CopyToImageDialog.exportToHTML"/>
 	</section>
 </section>
