@@ -38,6 +38,8 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
     private int signID = 0;
     private int score = 0;
 
+    private int NUMBER_OF_SCENES = 12;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,24 +90,22 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
         img_sign14.setOnClickListener(this);
     }
 
-
-    //FIX MAGIC NUMBERS
     @Override
     public void onClick(View view) {
         if(view == btn_next) {
             vf_scenes.showNext();
             answers.put(sceneID, signID);
-            sceneID += 1;
-            if (sceneID > 12) {
+            sceneID++;
+            if (sceneID > NUMBER_OF_SCENES) {
                 sceneID = 1;
             }
             putAnswer(answers.get(sceneID));
         } else if(view == btn_prev) {
             vf_scenes.showPrevious();
             answers.put(sceneID, signID);
-            sceneID -= 1;
+            sceneID--;
             if (sceneID < 1) {
-                sceneID = 12;
+                sceneID = NUMBER_OF_SCENES;
             }
             putAnswer(answers.get(sceneID));
         } else if (view == btn_submit) {
