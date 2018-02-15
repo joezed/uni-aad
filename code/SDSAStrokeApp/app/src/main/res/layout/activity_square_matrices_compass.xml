@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.ntu.groupf.sdsastrokeapp.SquareMatricesCompassActivity">
 
+    <ImageView
+        android:id="@+id/img_sign1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/sign1"/>
+
 </android.support.constraint.ConstraintLayout>
