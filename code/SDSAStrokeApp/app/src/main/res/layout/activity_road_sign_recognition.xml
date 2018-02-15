@@ -156,23 +156,10 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/sign13"
         app:layout_constraintEnd_toStartOf="@+id/img_sign14"
-        app:layout_constraintTop_toBottomOf="@+id/img_sign11" />
-
-    <ImageView
-        android:id="@+id/img_sign14"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/sign14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_sign12" />
+        app:layout_constraintTop_toBottomOf="@+id/img_sign9" />
 
     <ViewFlipper
         android:id="@+id/vf_scenes"
@@ -347,6 +334,27 @@
         android:text="Next"
         app:layout_constraintEnd_toEndOf="@+id/vf_scenes"
         app:layout_constraintTop_toBottomOf="@+id/vf_scenes" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="207dp"
+        android:layout_height="97dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Submit all answers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign11" />
+
+    <ImageView
+        android:id="@+id/img_sign14"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sign14"
+        app:layout_constraintEnd_toStartOf="@+id/btn_submit"
+        app:layout_constraintTop_toBottomOf="@+id/img_sign10" />
 
 
 </android.support.constraint.ConstraintLayout>
