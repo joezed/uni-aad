@@ -1,5 +1,6 @@
 package com.ntu.groupf.sdsastrokeapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,7 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
     private ViewFlipper vf_scenes;
     private Button btn_next;
     private Button btn_prev;
-    private Button btn_submit;
+    private Button btn_rsrsubmit;
     private ImageView img_selected;
     private ImageView img_sign1;
     private ImageView img_sign2;
@@ -38,7 +39,7 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
     private int signID = 0;
     private int score = 0;
 
-    private int NUMBER_OF_SCENES = 12;
+    final private int NUMBER_OF_SCENES = 12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
         vf_scenes = (ViewFlipper) findViewById(R.id.vf_scenes);
         btn_next = (Button) findViewById(R.id.btn_next);
         btn_prev = (Button) findViewById(R.id.btn_prev);
-        btn_submit = (Button) findViewById(R.id.btn_submit);
+        btn_rsrsubmit = (Button) findViewById(R.id.btn_rsrsubmit);
         img_selected = (ImageView) findViewById(R.id.img_selected);
         img_sign1 = (ImageView) findViewById(R.id.img_sign1);
         img_sign2 = (ImageView) findViewById(R.id.img_sign2);
@@ -72,7 +73,7 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
 
         btn_next.setOnClickListener(this);
         btn_prev.setOnClickListener(this);
-        btn_submit.setOnClickListener(this);
+        btn_rsrsubmit.setOnClickListener(this);
         img_selected.setOnClickListener(this);
         img_sign1.setOnClickListener(this);
         img_sign2.setOnClickListener(this);
@@ -108,7 +109,7 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
                 sceneID = NUMBER_OF_SCENES;
             }
             putAnswer(answers.get(sceneID));
-        } else if (view == btn_submit) {
+        } else if (view == btn_rsrsubmit) {
             answers.put(sceneID, signID);
             score = 0;
             for (int i = 1; i <= answers.size(); i++) {
@@ -118,6 +119,8 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
             }
             Toast.makeText(RoadSignRecognitionActivity.this, "Score: " + Integer.toString(score),
                     Toast.LENGTH_SHORT).show();
+            finish();
+            startActivity(new Intent(RoadSignRecognitionActivity.this, DotCancellationActivity.class));
         }  else {
             signClick(view);
         }
