@@ -38,7 +38,6 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
     private int topCoordinateB;
     private int counter = 1;
     private int score = 0;
-    private int roundaboutID;
     final private int NUMBER_OF_ROUNDABOUTS = 28;
     private Long startTime;
     private Long elapsedTime;
@@ -155,7 +154,6 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
         int imageResource = getImage();
         image.setImageResource(imageResource);
         image.setContentDescription("clicked");
-        roundaboutID = vf_roundabouts.getDisplayedChild();
         counter++;
         if (counter <= NUMBER_OF_ROUNDABOUTS) {
             vf_roundabouts.showNext();
