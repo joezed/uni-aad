@@ -356,7 +356,7 @@ public class TrailMakingTestActivity extends AppCompatActivity implements View.O
                 Toast.makeText(TrailMakingTestActivity.this, "Errors: " + Integer.toString(errors),
                         Toast.LENGTH_SHORT).show();
                 finish();
-                startActivity(new Intent(TrailMakingTestActivity.this, RoadSignRecognitionActivity.class));
+                startActivity(new Intent(TrailMakingTestActivity.this, LoginActivity.class));
             } else {
                 if (counter < 24) {
                     errors++;

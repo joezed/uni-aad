@@ -132,7 +132,7 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
             Toast.makeText(RoadSignRecognitionActivity.this, "Score: " + Integer.toString(score),
                     Toast.LENGTH_SHORT).show();
             finish();
-            startActivity(new Intent(RoadSignRecognitionActivity.this, DotCancellationActivity.class));
+            startActivity(new Intent(RoadSignRecognitionActivity.this, TrailMakingTestIntroActivity.class));
         }  else {
             signClick(view);
         }

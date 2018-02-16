@@ -1,5 +1,6 @@
 package com.ntu.groupf.sdsastrokeapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -93,53 +94,37 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
     @Override
     public void onClick(View view) {
         if (view == img_space1 && img_space1.getContentDescription() != "clicked") {
-            setMatrixImage(img_space1);
-            scoreCalc(1,1);
+            setMatrixImage(img_space1, 1, 1);
         } else if (view == img_space2 && img_space2.getContentDescription() != "clicked") {
-            setMatrixImage(img_space2);
-            scoreCalc(1,2);
+            setMatrixImage(img_space2, 1, 2);
         } else if (view == img_space3 && img_space3.getContentDescription() != "clicked") {
-            setMatrixImage(img_space3);
-            scoreCalc(1,3);
+            setMatrixImage(img_space3, 1, 3);
         } else if (view == img_space4 && img_space4.getContentDescription() != "clicked") {
-            setMatrixImage(img_space4);
-            scoreCalc(1,4);
+            setMatrixImage(img_space4, 1, 4);
         } else if (view == img_space5 && img_space5.getContentDescription() != "clicked") {
-            setMatrixImage(img_space5);
-            scoreCalc(2,1);
+            setMatrixImage(img_space5, 2, 1);
         } else if (view == img_space6 && img_space6.getContentDescription() != "clicked") {
-            setMatrixImage(img_space6);
-            scoreCalc(2,2);
+            setMatrixImage(img_space6, 2, 2);
         } else if (view == img_space7 && img_space7.getContentDescription() != "clicked") {
-            setMatrixImage(img_space7);
-            scoreCalc(2,3);
+            setMatrixImage(img_space7, 2, 3);
         } else if (view == img_space8 && img_space8.getContentDescription() != "clicked") {
-            setMatrixImage(img_space8);
-            scoreCalc(2,4);
+            setMatrixImage(img_space8, 2, 4);
         } else if (view == img_space9 && img_space9.getContentDescription() != "clicked") {
-            setMatrixImage(img_space9);
-            scoreCalc(3,1);
+            setMatrixImage(img_space9, 3, 1);
         } else if (view == img_space10 && img_space10.getContentDescription() != "clicked") {
-            setMatrixImage(img_space10);
-            scoreCalc(3,2);
+            setMatrixImage(img_space10, 3, 2);
         } else if (view == img_space11 && img_space11.getContentDescription() != "clicked") {
-            setMatrixImage(img_space11);
-            scoreCalc(3,3);
+            setMatrixImage(img_space11, 3, 3);
         } else if (view == img_space12 && img_space12.getContentDescription() != "clicked") {
-            setMatrixImage(img_space12);
-            scoreCalc(3,4);
+            setMatrixImage(img_space12, 3, 4);
         } else if (view == img_space13 && img_space13.getContentDescription() != "clicked") {
-            setMatrixImage(img_space13);
-            scoreCalc(4,1);
+            setMatrixImage(img_space13, 4, 1);
         } else if (view == img_space14 && img_space14.getContentDescription() != "clicked") {
-            setMatrixImage(img_space14);
-            scoreCalc(4,2);
+            setMatrixImage(img_space14, 4, 2);
         } else if (view == img_space15 && img_space15.getContentDescription() != "clicked") {
-            setMatrixImage(img_space15);
-            scoreCalc(4,3);
+            setMatrixImage(img_space15, 4, 3);
         } else if (view == img_space16 && img_space16.getContentDescription() != "clicked") {
-            setMatrixImage(img_space16);
-            scoreCalc(4,4);
+            setMatrixImage(img_space16, 4, 4);
         } else if (view == img_bin) {
             counter++;
             if (counter <= NUMBER_OF_ROUNDABOUTS) {
@@ -150,10 +135,11 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
         }
     }
 
-    public void setMatrixImage(ImageView image) {
+    public void setMatrixImage(ImageView image, int sideCoordinate, int topCoordinate) {
         int imageResource = getImage();
         image.setImageResource(imageResource);
         image.setContentDescription("clicked");
+        scoreCalc(sideCoordinate, topCoordinate);
         counter++;
         if (counter <= NUMBER_OF_ROUNDABOUTS) {
             vf_roundabouts.showNext();
@@ -381,5 +367,7 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
     public void endGame() {
         Toast.makeText(SquareMatricesCompassActivity.this, "Score: " + Integer.toString(score),
                 Toast.LENGTH_SHORT).show();
+        finish();
+        startActivity(new Intent(SquareMatricesCompassActivity.this, RoadSignRecognitionIntroActivity.class));
     }
 }
