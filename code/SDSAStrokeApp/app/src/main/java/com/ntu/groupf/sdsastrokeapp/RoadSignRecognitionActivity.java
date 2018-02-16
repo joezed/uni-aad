@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,10 +42,16 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
 
     final private int NUMBER_OF_SCENES = 12;
 
+    private Long startTime;
+    private Long elapsedTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_road_sign_recognition);
+
+        startTime = System.currentTimeMillis();
+        elapsedTime = 0L;
 
         //fill map with null answers
         for (int i = 1; i <= NUMBER_OF_SCENES; i++) {
@@ -95,7 +102,10 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
     public void onClick(View view) {
         if(view == btn_next) {
             vf_scenes.showNext();
-            answers.put(sceneID, signID);
+            elapsedTime = (new Date()).getTime() - startTime;
+            if (elapsedTime < (3* 60 * 1000)) {
+                answers.put(sceneID, signID);
+            }
             sceneID++;
             if (sceneID > NUMBER_OF_SCENES) {
                 sceneID = 1;
@@ -103,7 +113,9 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
             putAnswer(answers.get(sceneID));
         } else if(view == btn_prev) {
             vf_scenes.showPrevious();
-            answers.put(sceneID, signID);
+            if (elapsedTime < (3 * 60 * 1000)) {
+                answers.put(sceneID, signID);
+            }
             sceneID--;
             if (sceneID < 1) {
                 sceneID = NUMBER_OF_SCENES;

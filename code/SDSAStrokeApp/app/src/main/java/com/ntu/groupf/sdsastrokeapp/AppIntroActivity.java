@@ -22,7 +22,7 @@ public class AppIntroActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         if (view == btn_begin) {
             finish();
-            startActivity(new Intent(AppIntroActivity.this, SquareMatricesCompassActivity.class));
+            startActivity(new Intent(AppIntroActivity.this, RoadSignRecognitionActivity.class));
         }
     }
 }
