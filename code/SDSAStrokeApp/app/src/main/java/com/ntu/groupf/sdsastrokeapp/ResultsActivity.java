@@ -5,7 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class ResultsActivity extends AppCompatActivity {
+
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,5 +46,19 @@ public class ResultsActivity extends AppCompatActivity {
             txt_resultValue.setText("Fail");
         }
 
+        FirebaseDatabase database =  FirebaseDatabase.getInstance();
+
+        DatabaseReference mRef =  database.getReference().child("test_id").push();
+        mRef.child("clinician").setValue(currentTest.getClinicianEmail());
+        mRef.child("final_result").setValue(currentTest.hasPassed());
+        mRef.child("patient_id").setValue(currentTest.getPatientID());
+        mRef.child("result_dcerrors").setValue(currentTest.getDcErrors());
+        mRef.child("result_dctimetaken").setValue(currentTest.getDcTimeTaken());
+        mRef.child("result_rsrscore").setValue(currentTest.getRsrScore());
+        mRef.child("result_smcscore").setValue(currentTest.getSmcScore());
+        mRef.child("result_smdscore").setValue(currentTest.getSmdScore());
+        mRef.child("result_tmterrors").setValue(currentTest.getTmtErrors());
+        mRef.child("score_fail").setValue(currentTest.getFailScore());
+        mRef.child("score_pass").setValue(currentTest.getPassScore());
     }
 }
