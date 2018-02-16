@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +31,7 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
     private ImageView img_space14;
     private ImageView img_space15;
     private ImageView img_space16;
+
     private int sideCoordinateA;
     private int sideCoordinateB;
     private int topCoordinateA;
@@ -38,11 +40,16 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
     private int score = 0;
     private int roundaboutID;
     final private int NUMBER_OF_ROUNDABOUTS = 28;
+    private Long startTime;
+    private Long elapsedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_square_matrices_compass);
+
+        startTime = System.currentTimeMillis();
+        elapsedTime = 0L;
 
         vf_roundabouts = (ViewFlipper) findViewById(R.id.vf_roundabouts);
         img_bin = (ImageView) findViewById(R.id.img_bin);
@@ -362,11 +369,14 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
     }
 
     public void scoreCalc(int sideCoordinate, int topCoordinate) {
-        if (sideCoordinateA == sideCoordinate || sideCoordinateB == sideCoordinate) {
-            score++;
-        }
-        if (topCoordinateA == topCoordinate || topCoordinateB == topCoordinate) {
-            score++;
+        elapsedTime = (new Date()).getTime() - startTime;
+        if (elapsedTime < (5 * 60 * 1000)) {
+            if (sideCoordinateA == sideCoordinate || sideCoordinateB == sideCoordinate) {
+                score++;
+            }
+            if (topCoordinateA == topCoordinate || topCoordinateB == topCoordinate) {
+                score++;
+            }
         }
     }
 
