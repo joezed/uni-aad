@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.Date;
+import java.util.Timer;
+
 public class DotCancellationActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btn_dcsubmit;
@@ -111,11 +114,14 @@ public class DotCancellationActivity extends AppCompatActivity implements View.O
     private ImageView clusterg14;
 
     private int falsePositives = 0;
-
+    private long timeTaken = 0;
     final private int NUMBER_OF_FOUR_CLUSTERS = 47;
+    private Long startTime;
+    private Long elapsedTime;
 
     public void setIncorrect(ImageView image) {
-        if (image.getContentDescription() != "clicked") {
+        elapsedTime = (new Date()).getTime() - startTime;
+        if (image.getContentDescription() != "clicked" && elapsedTime < (15 * 60 * 1000)) {
             falsePositives++;
             image.setContentDescription("clicked");
         }
@@ -125,6 +131,9 @@ public class DotCancellationActivity extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dot_cancellation);
+
+        startTime = System.currentTimeMillis();
+        elapsedTime = 0L;
 
         btn_dcsubmit = (Button) findViewById(R.id.btn_dcsubmit);
         clustera1 = (ImageView) findViewById(R.id.img_clustera1);
@@ -330,9 +339,15 @@ public class DotCancellationActivity extends AppCompatActivity implements View.O
 
     @Override
     public void onClick(View view) {
+        timeTaken = (((new Date()).getTime() - startTime) / 1000);
+        double timeInSecs = Math.floor(timeTaken);
+        if (timeInSecs > 900) {
+            timeTaken = 900;
+        }
         switch (view.getId()) {
             case R.id.btn_dcsubmit:
-                Toast.makeText(DotCancellationActivity.this, "False positives: " + Integer.toString(falsePositives),
+                Toast.makeText(DotCancellationActivity.this, "False positives: " +
+                                Integer.toString(falsePositives) + " Time taken: " + Long.toString(timeTaken),
                         Toast.LENGTH_SHORT).show();
                 finish();
                 startActivity(new Intent(DotCancellationActivity.this, DotCancellationActivity.class));
