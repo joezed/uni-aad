@@ -26,7 +26,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private FirebaseAuth firebaseAuth;
     private FirebaseUser currentUser;
-    private ProgressDialog progressDialog;
 
     @Override
     public void onStart() {

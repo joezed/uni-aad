@@ -341,7 +341,7 @@ public class DotCancellationActivity extends AppCompatActivity implements View.O
     public void onClick(View view) {
         timeTaken = (((new Date()).getTime() - startTime) / 1000);
         double timeInSecs = Math.floor(timeTaken);
-        if (timeInSecs > 900) {
+        if (timeTaken > 900) {
             timeTaken = 900;
         }
         switch (view.getId()) {

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.Date;
+
 public class TrailMakingTestActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView img_node1;
@@ -34,13 +36,17 @@ public class TrailMakingTestActivity extends AppCompatActivity implements View.O
     private ImageView img_node23;
     private ImageView img_node24;
 
+    private long timeTaken = 0;
     private int counter = 1;
     private int errors = 0;
+    private Long startTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trail_making_test);
+
+        startTime = System.currentTimeMillis();
 
         img_node1 = (ImageView) findViewById(R.id.img_node1);
         img_node2 = (ImageView) findViewById(R.id.img_node2);
@@ -353,7 +359,8 @@ public class TrailMakingTestActivity extends AppCompatActivity implements View.O
             if (counter == 24) {
                 counter++;
                 img_node24.setImageResource(R.drawable.node_blank);
-                Toast.makeText(TrailMakingTestActivity.this, "Errors: " + Integer.toString(errors),
+                timeTaken = (((new Date()).getTime() - startTime) / 1000);
+                Toast.makeText(TrailMakingTestActivity.this, "Errors: " + Integer.toString(errors) + "Time taken: " + Long.toString(timeTaken),
                         Toast.LENGTH_SHORT).show();
                 finish();
                 startActivity(new Intent(TrailMakingTestActivity.this, LoginActivity.class));

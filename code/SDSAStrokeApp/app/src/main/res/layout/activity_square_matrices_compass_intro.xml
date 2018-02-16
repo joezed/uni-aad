@@ -28,7 +28,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="This time the black arm of the compass indicates a direction of travel. “Can you now, as you did before, position these cards on the grid, so that
+        android:text="This time the black arm of the compass indicates a direction of travel. Can you now, as you did before, position these cards on the grid, so that
 each of the vehicles on these cards goes in the direction indicated on the compass cards? The roundabout sign is always at the bottom. There are more cards than available spaces, so some of the cards will not fit in."
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
