@@ -30,8 +30,10 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
     private ImageView img_space14;
     private ImageView img_space15;
     private ImageView img_space16;
-
-    private Map<Integer, Integer> answers = new HashMap<>();
+    private int sideCoordinateA;
+    private int sideCoordinateB;
+    private int topCoordinateA;
+    private int topCoordinateB;
     private int counter = 1;
     private int score = 0;
     private int roundaboutID;
@@ -41,11 +43,6 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_square_matrices_compass);
-
-        //fill map with null answers
-        for (int i = 1; i <= NUMBER_OF_ROUNDABOUTS; i++) {
-            answers.put(i, 0);
-        }
 
         vf_roundabouts = (ViewFlipper) findViewById(R.id.vf_roundabouts);
         img_bin = (ImageView) findViewById(R.id.img_bin);
@@ -91,52 +88,52 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
     public void onClick(View view) {
         if (view == img_space1 && img_space1.getContentDescription() != "clicked") {
             setMatrixImage(img_space1);
-            answers.put(1, roundaboutID);
+            scoreCalc(1,1);
         } else if (view == img_space2 && img_space2.getContentDescription() != "clicked") {
             setMatrixImage(img_space2);
-            answers.put(2, roundaboutID);
+            scoreCalc(1,2);
         } else if (view == img_space3 && img_space3.getContentDescription() != "clicked") {
             setMatrixImage(img_space3);
-            answers.put(3, roundaboutID);
+            scoreCalc(1,3);
         } else if (view == img_space4 && img_space4.getContentDescription() != "clicked") {
             setMatrixImage(img_space4);
-            answers.put(4, roundaboutID);
+            scoreCalc(1,4);
         } else if (view == img_space5 && img_space5.getContentDescription() != "clicked") {
             setMatrixImage(img_space5);
-            answers.put(5, roundaboutID);
+            scoreCalc(2,1);
         } else if (view == img_space6 && img_space6.getContentDescription() != "clicked") {
             setMatrixImage(img_space6);
-            answers.put(6, roundaboutID);
+            scoreCalc(2,2);
         } else if (view == img_space7 && img_space7.getContentDescription() != "clicked") {
             setMatrixImage(img_space7);
-            answers.put(7, roundaboutID);
+            scoreCalc(2,3);
         } else if (view == img_space8 && img_space8.getContentDescription() != "clicked") {
             setMatrixImage(img_space8);
-            answers.put(8, roundaboutID);
+            scoreCalc(2,4);
         } else if (view == img_space9 && img_space9.getContentDescription() != "clicked") {
             setMatrixImage(img_space9);
-            answers.put(9, roundaboutID);
+            scoreCalc(3,1);
         } else if (view == img_space10 && img_space10.getContentDescription() != "clicked") {
             setMatrixImage(img_space10);
-            answers.put(10, roundaboutID);
+            scoreCalc(3,2);
         } else if (view == img_space11 && img_space11.getContentDescription() != "clicked") {
             setMatrixImage(img_space11);
-            answers.put(11, roundaboutID);
+            scoreCalc(3,3);
         } else if (view == img_space12 && img_space12.getContentDescription() != "clicked") {
             setMatrixImage(img_space12);
-            answers.put(12, roundaboutID);
+            scoreCalc(3,4);
         } else if (view == img_space13 && img_space13.getContentDescription() != "clicked") {
             setMatrixImage(img_space13);
-            answers.put(13, roundaboutID);
+            scoreCalc(4,1);
         } else if (view == img_space14 && img_space14.getContentDescription() != "clicked") {
             setMatrixImage(img_space14);
-            answers.put(14, roundaboutID);
+            scoreCalc(4,2);
         } else if (view == img_space15 && img_space15.getContentDescription() != "clicked") {
             setMatrixImage(img_space15);
-            answers.put(15, roundaboutID);
+            scoreCalc(4,3);
         } else if (view == img_space16 && img_space16.getContentDescription() != "clicked") {
             setMatrixImage(img_space16);
-            answers.put(16, roundaboutID);
+            scoreCalc(4,4);
         } else if (view == img_bin) {
             counter++;
             if (counter <= NUMBER_OF_ROUNDABOUTS) {
@@ -166,99 +163,214 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
         switch (current) {
             case 1:
                 currentRoundabout = R.drawable.roundabout1;
+                sideCoordinateA = 1;
+                sideCoordinateB = 0;
+                topCoordinateA = 1;
+                topCoordinateB = 0;
                 break;
             case 2:
                 currentRoundabout = R.drawable.roundabout2;
+                sideCoordinateA = 1;
+                sideCoordinateB = 0;
+                topCoordinateA = 2;
+                topCoordinateB = 0;
                 break;
             case 3:
                 currentRoundabout = R.drawable.roundabout3;
+                sideCoordinateA = 1;
+                sideCoordinateB = 0;
+                topCoordinateA = 3;
+                topCoordinateB = 0;
                 break;
             case 4:
                 currentRoundabout = R.drawable.roundabout4;
+                sideCoordinateA = 1;
+                sideCoordinateB = 0;
+                topCoordinateA = 4;
+                topCoordinateB = 0;
                 break;
             case 5:
                 currentRoundabout = R.drawable.roundabout5;
+                sideCoordinateA = 2;
+                sideCoordinateB = 0;
+                topCoordinateA = 1;
+                topCoordinateB = 0;
                 break;
             case 6:
                 currentRoundabout = R.drawable.roundabout6;
+                sideCoordinateA = 2;
+                sideCoordinateB = 0;
+                topCoordinateA = 2;
+                topCoordinateB = 0;
                 break;
             case 7:
                 currentRoundabout = R.drawable.roundabout7;
+                sideCoordinateA = 2;
+                sideCoordinateB = 0;
+                topCoordinateA = 3;
+                topCoordinateB = 0;
                 break;
             case 8:
                 currentRoundabout = R.drawable.roundabout8;
+                sideCoordinateA = 2;
+                sideCoordinateB = 0;
+                topCoordinateA = 4;
+                topCoordinateB = 0;
                 break;
             case 9:
                 currentRoundabout = R.drawable.roundabout9;
+                sideCoordinateA = 3;
+                sideCoordinateB = 0;
+                topCoordinateA = 1;
+                topCoordinateB = 0;
                 break;
             case 10:
                 currentRoundabout = R.drawable.roundabout10;
+                sideCoordinateA = 3;
+                sideCoordinateB = 0;
+                topCoordinateA = 2;
+                topCoordinateB = 0;
                 break;
             case 11:
                 currentRoundabout = R.drawable.roundabout11;
+                sideCoordinateA = 3;
+                sideCoordinateB = 0;
+                topCoordinateA = 3;
+                topCoordinateB = 0;
                 break;
             case 12:
                 currentRoundabout = R.drawable.roundabout12;
+                sideCoordinateA = 3;
+                sideCoordinateB = 0;
+                topCoordinateA = 4;
+                topCoordinateB = 0;
                 break;
             case 13:
                 currentRoundabout = R.drawable.roundabout13;
+                sideCoordinateA = 4;
+                sideCoordinateB = 0;
+                topCoordinateA = 1;
+                topCoordinateB = 0;
                 break;
             case 14:
                 currentRoundabout = R.drawable.roundabout14;
+                sideCoordinateA = 4;
+                sideCoordinateB = 0;
+                topCoordinateA = 2;
+                topCoordinateB = 0;
                 break;
             case 15:
                 currentRoundabout = R.drawable.roundabout15;
+                sideCoordinateA = 4;
+                sideCoordinateB = 0;
+                topCoordinateA = 3;
+                topCoordinateB = 0;
                 break;
             case 16:
                 currentRoundabout = R.drawable.roundabout16;
+                sideCoordinateA = 4;
+                sideCoordinateB = 0;
+                topCoordinateA = 4;
+                topCoordinateB = 0;
                 break;
             case 17:
                 currentRoundabout = R.drawable.roundabout17;
+                sideCoordinateA = 0;
+                sideCoordinateB = 0;
+                topCoordinateA = 2;
+                topCoordinateB = 4;
                 break;
             case 18:
                 currentRoundabout = R.drawable.roundabout18;
+                sideCoordinateA = 0;
+                sideCoordinateB = 0;
+                topCoordinateA = 1;
+                topCoordinateB = 4;
                 break;
             case 19:
                 currentRoundabout = R.drawable.roundabout19;
+                sideCoordinateA = 0;
+                sideCoordinateB = 0;
+                topCoordinateA = 3;
+                topCoordinateB = 4;
                 break;
             case 20:
                 currentRoundabout = R.drawable.roundabout20;
+                sideCoordinateA = 2;
+                sideCoordinateB = 3;
+                topCoordinateA = 0;
+                topCoordinateB = 0;
                 break;
             case 21:
                 currentRoundabout = R.drawable.roundabout21;
+                sideCoordinateA = 3;
+                sideCoordinateB = 4;
+                topCoordinateA = 0;
+                topCoordinateB = 0;
                 break;
             case 22:
                 currentRoundabout = R.drawable.roundabout22;
+                sideCoordinateA = 1;
+                sideCoordinateB = 3;
+                topCoordinateA = 0;
+                topCoordinateB = 0;
                 break;
             case 23:
                 currentRoundabout = R.drawable.roundabout23;
+                sideCoordinateA = 0;
+                sideCoordinateB = 0;
+                topCoordinateA = 1;
+                topCoordinateB = 2;
                 break;
             case 24:
                 currentRoundabout = R.drawable.roundabout24;
+                sideCoordinateA = 0;
+                sideCoordinateB = 0;
+                topCoordinateA = 2;
+                topCoordinateB = 3;
                 break;
             case 25:
                 currentRoundabout = R.drawable.roundabout25;
+                sideCoordinateA = 2;
+                sideCoordinateB = 4;
+                topCoordinateA = 0;
+                topCoordinateB = 0;
                 break;
             case 26:
                 currentRoundabout = R.drawable.roundabout26;
+                sideCoordinateA = 1;
+                sideCoordinateB = 4;
+                topCoordinateA = 0;
+                topCoordinateB = 0;
                 break;
             case 27:
                 currentRoundabout = R.drawable.roundabout27;
+                sideCoordinateA = 0;
+                sideCoordinateB = 0;
+                topCoordinateA = 1;
+                topCoordinateB = 3;
                 break;
             case 28:
                 currentRoundabout = R.drawable.roundabout28;
+                sideCoordinateA = 1;
+                sideCoordinateB = 2;
+                topCoordinateA = 0;
+                topCoordinateB = 0;
                 break;
         }
         return currentRoundabout;
     }
 
-    public void endGame() {
-        score = 0;
-        for (int i = 1; i <= answers.size(); i++) {
-            if (i == answers.get(i)) {
-                score += 1;
-            }
+    public void scoreCalc(int sideCoordinate, int topCoordinate) {
+        if (sideCoordinateA == sideCoordinate || sideCoordinateB == sideCoordinate) {
+            score++;
         }
+        if (topCoordinateA == topCoordinate || topCoordinateB == topCoordinate) {
+            score++;
+        }
+    }
+
+    public void endGame() {
         Toast.makeText(SquareMatricesCompassActivity.this, "Score: " + Integer.toString(score),
                 Toast.LENGTH_SHORT).show();
     }
