@@ -1,6 +1,7 @@
 package com.ntu.groupf.sdsastrokeapp;
 
 import android.content.Intent;
+import android.os.PatternMatcher;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +23,7 @@ public class AppIntroActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         if (view == btn_begin) {
             finish();
-            startActivity(new Intent(AppIntroActivity.this, RoadSignRecognitionActivity.class));
+            startActivity(new Intent(AppIntroActivity.this, DotCancellationIntroActivity.class));
         }
     }
 }

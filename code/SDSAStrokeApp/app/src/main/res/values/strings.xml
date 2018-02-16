@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SdsaStrokeApp</string>
+    <string name="country_prompt">Select nationality</string>
+
+    <string-array name="nationality_array">
+        <item>United Kingdom</item>
+        <item>Germany</item>
+        <item>Spain</item>
+    </string-array>
 </resources>

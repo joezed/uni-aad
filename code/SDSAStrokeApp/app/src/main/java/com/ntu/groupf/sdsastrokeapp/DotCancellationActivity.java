@@ -350,7 +350,7 @@ public class DotCancellationActivity extends AppCompatActivity implements View.O
                                 Integer.toString(falsePositives) + " Time taken: " + Long.toString(timeTaken),
                         Toast.LENGTH_SHORT).show();
                 finish();
-                startActivity(new Intent(DotCancellationActivity.this, DotCancellationActivity.class));
+                startActivity(new Intent(DotCancellationActivity.this, SquareMatricesDirectionsIntroActivity.class));
                 break;
             case R.id.img_clustera1:
                 clustera1.setImageResource(R.drawable.fourdots1clicked);

@@ -6,4 +6,31 @@
     android:layout_height="match_parent"
     tools:context="com.ntu.groupf.sdsastrokeapp.DotCancellationIntroActivity">
 
+    <Button
+        android:id="@+id/btn_begin"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Begin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_dcintro"
+        app:layout_constraintVertical_bias="0.876" />
+
+    <TextView
+        android:id="@+id/txt_dcintro"
+        android:layout_width="850dp"
+        android:layout_height="304dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="You will see that there are groups of dots arranged in rows. Some of the groups have 3 dots, some 4 and some 5 dots. I want you to tap every group of 4 dots. The task is timed but it is more important to be accurate than fast. Start when you are ready."
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -22,13 +22,14 @@
         <activity android:name=".DotCancellationIntroActivity" />
         <activity android:name=".DotCancellationActivity" />
         <activity android:name=".SquareMatricesDirectionsIntroActivity" />
-        <activity android:name=".SquareMatricesDirections" />
+        <activity android:name=".SquareMatricesDirectionsActivity" />
         <activity android:name=".SquareMatricesCompassActivity" />
         <activity android:name=".SquareMatricesCompassIntroActivity" />
         <activity android:name=".RoadSignRecognitionIntroActivity" />
         <activity android:name=".RoadSignRecognitionActivity" />
         <activity android:name=".TrailMakingTestIntroActivity" />
-        <activity android:name=".TrailMakingTestActivity"></activity>
+        <activity android:name=".TrailMakingTestActivity" />
+        <activity android:name=".PatientInfoActivity"></activity>
     </application>
 
 </manifest>
