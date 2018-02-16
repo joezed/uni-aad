@@ -21,8 +21,12 @@ public class SquareMatricesCompassIntroActivity extends AppCompatActivity implem
     @Override
     public void onClick(View view) {
         if (view == btn_begin) {
+            Intent i = getIntent();
+            TestData currentTest = (TestData) i.getSerializableExtra("currentTest");
+            i = new Intent(SquareMatricesCompassIntroActivity.this, SquareMatricesCompassActivity.class);
+            i.putExtra("currentTest", currentTest);
             finish();
-            startActivity(new Intent(SquareMatricesCompassIntroActivity.this, SquareMatricesCompassActivity.class));
+            startActivity(i);
         }
     }
 }

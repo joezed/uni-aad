@@ -131,8 +131,13 @@ public class RoadSignRecognitionActivity extends AppCompatActivity implements Vi
             }
             Toast.makeText(RoadSignRecognitionActivity.this, "Score: " + Integer.toString(score),
                     Toast.LENGTH_SHORT).show();
+            Intent i = getIntent();
+            TestData currentTest = (TestData) i.getSerializableExtra("currentTest");
+            currentTest.setRsrScore(score);
+            i = new Intent(RoadSignRecognitionActivity.this, TrailMakingTestIntroActivity.class);
+            i.putExtra("currentTest", currentTest);
             finish();
-            startActivity(new Intent(RoadSignRecognitionActivity.this, TrailMakingTestIntroActivity.class));
+            startActivity(i);
         }  else {
             signClick(view);
         }

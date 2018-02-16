@@ -22,8 +22,12 @@ public class AppIntroActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
         if (view == btn_begin) {
+            Intent i = getIntent();
+            TestData currentTest = (TestData) i.getSerializableExtra("currentTest");
+            i = new Intent(AppIntroActivity.this, DotCancellationIntroActivity.class);
+            i.putExtra("currentTest", currentTest);
             finish();
-            startActivity(new Intent(AppIntroActivity.this, DotCancellationIntroActivity.class));
+            startActivity(i);
         }
     }
 }

@@ -29,7 +29,8 @@
         <activity android:name=".RoadSignRecognitionActivity" />
         <activity android:name=".TrailMakingTestIntroActivity" />
         <activity android:name=".TrailMakingTestActivity" />
-        <activity android:name=".PatientInfoActivity"></activity>
+        <activity android:name=".PatientInfoActivity" />
+        <activity android:name=".ResultsActivity"></activity>
     </application>
 
 </manifest>

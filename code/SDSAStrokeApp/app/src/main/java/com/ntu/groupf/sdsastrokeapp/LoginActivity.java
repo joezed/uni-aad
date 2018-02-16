@@ -17,7 +17,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+import java.io.Serializable;
+
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
 
     private EditText txt_email;
@@ -78,8 +80,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if (task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "Authentication succeeded",
                                     Toast.LENGTH_SHORT).show();
+                            TestData currentTest = new TestData();
+                            currentTest.setClinicianEmail(txt_email.getText().toString().trim());
+                            Intent i = new Intent(LoginActivity.this, PatientInfoActivity.class);
+                            i.putExtra("currentTest", currentTest);
                             finish();
-                            startActivity(new Intent(LoginActivity.this, PatientInfoActivity.class));
+                            startActivity(i);
                         } else {
                             Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();

@@ -238,7 +238,12 @@ public class SquareMatricesDirectionsActivity extends AppCompatActivity implemen
     public void endGame() {
         Toast.makeText(SquareMatricesDirectionsActivity.this, "Score: " + Integer.toString(score),
                 Toast.LENGTH_SHORT).show();
+        Intent i = getIntent();
+        TestData currentTest = (TestData) i.getSerializableExtra("currentTest");
+        currentTest.setSmdScore(score);
+        i = new Intent(SquareMatricesDirectionsActivity.this, SquareMatricesCompassIntroActivity.class);
+        i.putExtra("currentTest", currentTest);
         finish();
-        startActivity(new Intent(SquareMatricesDirectionsActivity.this, SquareMatricesCompassIntroActivity.class));
+        startActivity(i);
     }
 }

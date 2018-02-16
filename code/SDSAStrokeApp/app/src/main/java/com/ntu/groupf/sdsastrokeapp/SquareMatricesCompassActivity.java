@@ -367,7 +367,12 @@ public class SquareMatricesCompassActivity extends AppCompatActivity implements 
     public void endGame() {
         Toast.makeText(SquareMatricesCompassActivity.this, "Score: " + Integer.toString(score),
                 Toast.LENGTH_SHORT).show();
+        Intent i = getIntent();
+        TestData currentTest = (TestData) i.getSerializableExtra("currentTest");
+        currentTest.setSmcScore(score);
+        i = new Intent(SquareMatricesCompassActivity.this, RoadSignRecognitionIntroActivity.class);
+        i.putExtra("currentTest", currentTest);
         finish();
-        startActivity(new Intent(SquareMatricesCompassActivity.this, RoadSignRecognitionIntroActivity.class));
+        startActivity(i);
     }
 }

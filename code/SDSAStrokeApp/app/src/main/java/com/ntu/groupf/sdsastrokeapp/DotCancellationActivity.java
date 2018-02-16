@@ -349,9 +349,17 @@ public class DotCancellationActivity extends AppCompatActivity implements View.O
                 Toast.makeText(DotCancellationActivity.this, "False positives: " +
                                 Integer.toString(falsePositives) + " Time taken: " + Long.toString(timeTaken),
                         Toast.LENGTH_SHORT).show();
+
+                Intent i = getIntent();
+                TestData currentTest = (TestData) i.getSerializableExtra("currentTest");
+                currentTest.setDcTimeTaken((int) timeTaken);
+                currentTest.setDcErrors(falsePositives);
+                i = new Intent(DotCancellationActivity.this, SquareMatricesDirectionsIntroActivity.class);
+                i.putExtra("currentTest", currentTest);
                 finish();
-                startActivity(new Intent(DotCancellationActivity.this, SquareMatricesDirectionsIntroActivity.class));
+                startActivity(i);
                 break;
+
             case R.id.img_clustera1:
                 clustera1.setImageResource(R.drawable.fourdots1clicked);
                 break;

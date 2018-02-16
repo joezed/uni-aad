@@ -3,13 +3,16 @@ package com.ntu.groupf.sdsastrokeapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 public class PatientInfoActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private EditText txt_patientID;
     private Button btn_pisubmit;
 
     @Override
@@ -24,14 +27,21 @@ public class PatientInfoActivity extends AppCompatActivity implements View.OnCli
         nationalitySelect.setAdapter(adapter);
 
         btn_pisubmit = (Button) findViewById(R.id.btn_pisubmit);
+        txt_patientID = (EditText) findViewById(R.id.txt_patientID);
+
         btn_pisubmit.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         if (view == btn_pisubmit) {
+            Intent i = getIntent();
+            TestData currentTest = (TestData) i.getSerializableExtra("currentTest");
+            currentTest.setPatientID(txt_patientID.getText().toString().trim());
+            i = new Intent(PatientInfoActivity.this, AppIntroActivity.class);
+            i.putExtra("currentTest", currentTest);
             finish();
-            startActivity(new Intent(PatientInfoActivity.this, AppIntroActivity.class));
+            startActivity(i);
         }
     }
 }

@@ -362,8 +362,15 @@ public class TrailMakingTestActivity extends AppCompatActivity implements View.O
                 timeTaken = (((new Date()).getTime() - startTime) / 1000);
                 Toast.makeText(TrailMakingTestActivity.this, "Errors: " + Integer.toString(errors) + "Time taken: " + Long.toString(timeTaken),
                         Toast.LENGTH_SHORT).show();
+
+                Intent i = getIntent();
+                TestData currentTest = (TestData) i.getSerializableExtra("currentTest");
+                currentTest.setTmtTimeTaken((int) timeTaken);
+                currentTest.setTmtErrors(errors);
+                i = new Intent(TrailMakingTestActivity.this, ResultsActivity.class);
+                i.putExtra("currentTest", currentTest);
                 finish();
-                startActivity(new Intent(TrailMakingTestActivity.this, LoginActivity.class));
+                startActivity(i);
             } else {
                 if (counter < 24) {
                     errors++;

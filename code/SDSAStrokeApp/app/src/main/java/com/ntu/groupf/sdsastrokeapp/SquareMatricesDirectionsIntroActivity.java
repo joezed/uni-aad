@@ -3,6 +3,7 @@ package com.ntu.groupf.sdsastrokeapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -21,8 +22,12 @@ public class SquareMatricesDirectionsIntroActivity extends AppCompatActivity imp
     @Override
     public void onClick(View view) {
         if (view == btn_begin) {
+            Intent i = getIntent();
+            TestData currentTest = (TestData) i.getSerializableExtra("currentTest");
+            i = new Intent(SquareMatricesDirectionsIntroActivity.this, SquareMatricesDirectionsActivity.class);
+            i.putExtra("currentTest", currentTest);
             finish();
-            startActivity(new Intent(SquareMatricesDirectionsIntroActivity.this, SquareMatricesDirectionsActivity.class));
+            startActivity(i);
         }
     }
 }

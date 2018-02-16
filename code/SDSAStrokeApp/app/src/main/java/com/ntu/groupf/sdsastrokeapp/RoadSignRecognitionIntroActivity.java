@@ -21,8 +21,12 @@ public class RoadSignRecognitionIntroActivity extends AppCompatActivity implemen
     @Override
     public void onClick(View view) {
         if (view == btn_begin) {
+            Intent i = getIntent();
+            TestData currentTest = (TestData) i.getSerializableExtra("currentTest");
+            i = new Intent(RoadSignRecognitionIntroActivity.this, RoadSignRecognitionActivity.class);
+            i.putExtra("currentTest", currentTest);
             finish();
-            startActivity(new Intent(RoadSignRecognitionIntroActivity.this, RoadSignRecognitionActivity.class));
+            startActivity(i);
         }
     }
 }

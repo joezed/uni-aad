@@ -21,8 +21,12 @@ public class DotCancellationIntroActivity extends AppCompatActivity implements V
     @Override
     public void onClick(View view) {
         if (view == btn_begin) {
+            Intent i = getIntent();
+            TestData currentTest = (TestData) i.getSerializableExtra("currentTest");
+            i = new Intent(DotCancellationIntroActivity.this, DotCancellationActivity.class);
+            i.putExtra("currentTest", currentTest);
             finish();
-            startActivity(new Intent(DotCancellationIntroActivity.this, DotCancellationActivity.class));
+            startActivity(i);
         }
     }
 }
